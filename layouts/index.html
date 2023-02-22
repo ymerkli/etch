@@ -1,4 +1,10 @@
 {{ define "main" }}
+{{- with .Site.Params.social }}
+    <div>
+        {{ partial "social-icons.html" . }}
+    </div>
+{{- end }}
 {{ .Content }}
 {{- partial "posts.html" . -}}
+{{- partial "projects.html" . -}}
 {{ end }}

@@ -28,4 +28,5 @@
     {{ printf `<link rel="stylesheet" href="%s">` $css.RelPermalink | safeHTML }}
 
     <title>{{ .Title }}</title>
+    {{ partial "hook_head_end.html" . }}
 </head>

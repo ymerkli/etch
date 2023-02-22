@@ -1,7 +1,13 @@
 {{ define "main" }}
 <h3>{{ .Title }}</h3>
 <ul id="posts">
-{{- range .Pages }}
+{{- range where site.RegularPages "Type" "in" site.Params.postsSections }}
+    {{ .Render "li" }}
+{{- end }}
+</ul>
+<h3>{{ .Title }}</h3>
+<ul id="posts">
+{{- range where site.RegularPages "Type" "in" site.Params.projectsSections }}
     {{ .Render "li" }}
 {{- end }}
 </ul>
